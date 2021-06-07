@@ -1,0 +1,138 @@
+{
+	"images":
+	{
+		"title":
+		{
+			"image" : "custommainmenu:textures/gui/minecraft.png",
+			"posX" : -137,
+			"posY" : 30,
+			"width" : 512,
+			"height" : 512,
+			"alignment" : "top_center"
+		}
+	},
+	
+	"buttons":
+	{
+		"singleplayer":
+		{
+			"text" : "menu.singleplayer",
+			"posX" : -100,
+			"posY" : 48,
+			"width" : 200,
+			"height" : 20,
+			"action" : 
+				{
+					"type" : "openGui",
+					"gui" : "singleplayer"
+				}
+		},
+		
+		"multiplayer":
+		{
+			"text" : "MP",
+			"posX" : -100,
+			"posY" : 72,
+			"width" : 20,
+			"height" : 20,
+			"action" : 
+				{
+					"type" : "openGui",
+					"gui" : "multiplayer"
+				}
+		},
+		
+		"mp_bonobo":
+		{
+			"text" : "Играть на Bonobo-craft",
+			"posX" : -78,
+			"posY" : 72,
+			"width" : 178,
+			"height" : 20,
+			"action" : 
+				{
+					"type" : "connectToServer",
+					"ip" : "play.bonobo-craft.com"
+				}
+		},
+		
+		"options":
+		{
+			"text" : "menu.options",
+			"posX" : -100,
+			"posY" : 96,
+			"width" : 98,
+			"height" : 20,
+			"action" : 
+				{
+					"type" : "openGui",
+					"gui" : "options"
+				}
+		},
+		
+		"quit":
+		{
+			"text" : "menu.quit",
+			"posX" : 2,
+			"posY" : 96,
+			"width" : 98,
+			"height" : 20,
+			"action" : 
+				{
+					"type" : "quit"
+				}
+		},
+		
+		"language":
+		{
+			"text" : "",
+			"posX" : -124,
+			"posY" : 96,
+			"width" : 20,
+			"height" : 20,
+			"action" : 
+				{
+					"type" : "openGui",
+					"gui" : "languages"
+				}
+		}
+	},
+	
+    "labels":
+    {
+        "version":
+        {
+            "text" : "Bonobo-craft - v5.0 @ 3.06",
+			"hoverText" : "",
+            "posX" : -200,
+            "posY" : -10,
+            "alignment" : "bottom_right",
+			"action" : 
+				{
+					"type" : "openLink",
+					"link" : "https://discord.gg/jDTvCy62"
+				}
+        }
+	},
+	
+	"other":
+	{
+		"splash-text":
+		{
+			"posX" : 90,
+			"posY" : 70,
+			"color" : -256,
+			"alignment" : "top_center",
+			"texts" : "file:minecraft:texts/splashes.txt"
+		},
+		
+		"panorama":
+		{
+			"images" : "minecraft:textures/gui/title/background/panorama_%c.png",
+			"animate" : true,
+			"animationSpeed" : 1,
+			"blur" : true,
+			"gradient" : true
+		}
+	}
+}

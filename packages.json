@@ -1,0 +1,12 @@
+{
+    "minimumVersion": 1,
+    "packages": [
+        {
+            "name": "Bonobo-Craft.com",
+            "title": "Bonobo-Craft.com",
+            "version": "5.3",
+            "location": "bonobo-craft.com.json",
+            "priority": 1
+        }
+    ]
+}
