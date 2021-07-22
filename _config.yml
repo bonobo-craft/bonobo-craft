@@ -28,7 +28,7 @@ twitter_username:
 github_username: 
 
 # Build settings
-theme: jekyll-theme-midnight
+theme: minima
 plugins:
 
 # Exclude from processing.
