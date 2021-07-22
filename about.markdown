@@ -4,7 +4,7 @@ title: Играть
 permalink: /modpack/
 ---
 
-Чтобы поиграть, скачайте наш ланчер: [http://update.bonobo-craft.com/bonobo_launcher.exe][asdf]
+Чтобы поиграть, скачайте наш ланчер: <a href="http://bonobo-craft.com/bonobo_launcher.jar">щелкните здесь</a>
 
 На сервере около 130 модов. Чтобы не делать обычный скучный модлист, мы решили рассказать лишь о самых значимых.
 
