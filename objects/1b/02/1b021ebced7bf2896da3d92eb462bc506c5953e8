@@ -1,0 +1,290 @@
+import crafttweaker.item.IItemCondition;
+import crafttweaker.item.IIngredient;
+
+//Ender IO
+	val EnderIOBannedItems = 
+        [<enderio:block_powered_spawner>]
+        as IIngredient[];
+    for item_tip_b in EnderIOBannedItems {
+        item_tip_b.addTooltip("§4Предмет отключен.");
+    }
+		for item_delete_b in EnderIOBannedItems {
+        recipes.remove(item_delete_b);
+    }
+
+//Draconic Evolution
+	val DraconicBannedItems = 
+        [<draconicevolution:dislocator_pedestal>, <draconicevolution:dislocator_receptacle>,
+         <draconicevolution:dislocator>, <draconicevolution:dislocator_advanced>,
+         <draconicevolution:dislocator_bound>]
+        as IIngredient[];
+    for item_tip_b in DraconicBannedItems {
+        item_tip_b.addTooltip("§4Предмет отключен.");
+    }
+		for item_delete_b in DraconicBannedItems {
+        recipes.remove(item_delete_b);
+    }
+
+//AM
+	//Предупреждение об энергоуровне!
+	#priority 1000
+    val am_enegrelvl = <advanced_machines:machines>.definition;
+    val am_metadata_level = [0,1,2,3,4,5,6,7] as int[];
+	for i in am_metadata_level{
+        am_enegrelvl.makeStack(i).addShiftTooltip(function(item) {   
+    	return "§1Предупреждение:";});}
+    for i in am_metadata_level{
+        am_enegrelvl.makeStack(i).addShiftTooltip(function(item) {    
+    	return "§4Соблюдайте энергоуровень, иначе механизм взорвётся." ;}, 
+		function(item){return "§4Зажмите §fshift §4для подробностей";});} 
+
+//ASP
+	//Предупреждение об энергоуровне!
+	val asp_enegrelvl = <advanced_solar_panels:machines>.definition;
+	val asp_metadata_level = [0,1,2,3,4,5] as int[];
+	for i in asp_metadata_level{
+        asp_enegrelvl.makeStack(i).addShiftTooltip(function(item) {   
+    	return "§4Предупреждение:";});}
+	for i in asp_metadata_level{
+        asp_enegrelvl.makeStack(i).addShiftTooltip(function(item) {    
+    	return "§4Соблюдайте энергоуровень, иначе механизм взорвётся." ;}, 
+		function(item){return "§4Зажмите §fshift §4для подробностей";});}
+
+//TE
+	/*
+	Расширение: нумизматический пресс <thermalexpansion:augment:336>
+	Расширение: лапидарная обработка <thermalexpansion:augment:720>
+	Шарик для жидкостей <thermalexpansion:florb:*>
+	Шарик для мобов <thermalexpansion:morb:*>
+	*/
+	val TE_TT = 
+        [<thermalexpansion:florb:*>, <thermalexpansion:morb:*>]
+        as IIngredient[];
+        for item_tip_b in TE_TT{
+        item_tip_b.addTooltip("§4Данный предмет отключен");
+        }
+		for item_delete_b in TE_TT{
+        recipes.remove(item_delete_b);
+        }
+
+//Immersive Engineering
+	/*
+	Блок радиатора <>
+	*/
+	val RadiatorBlock_TT = 
+        [<immersiveengineering:metal_decoration0:7>]
+        as IIngredient[];
+    for item_tip_b in RadiatorBlock_TT{
+        item_tip_b.addTooltip("§4Крафты экскаватора и дизель-генератора отключены");
+    }
+		for item_delete_b in RadiatorBlock_TT{
+        recipes.remove(item_delete_b);
+    }
+
+//Flux Network
+	/*
+	Флаксовый контроллер <fluxnetworks:fluxcontroller>
+	*/
+	val Flux_TT = 
+        [<fluxnetworks:fluxcontroller>]
+        as IIngredient[];
+        for item_tip_b in Flux_TT{
+        item_tip_b.addTooltip("§4Данный предмет отключен");
+        }
+		for item_delete_b in Flux_TT{
+        recipes.remove(item_delete_b);
+        }
+		
+//IC2
+    //Предупреждение об энергоуровне! (машинкам)
+        val ic2_enegrelvl = <ic2:te>.definition;
+        val ic2_metadata_level = [3,4,6,7,8,10,11,12,16,27,28,30,32,36,37,38,40,41,42,43,44,45,47,48,49,51,52,54,55,56,57,58,59,60,61,63,64,68,69,70,71,72,73,74,75,76,82,84,85,] as int[];
+        for i in ic2_metadata_level{
+            ic2_enegrelvl.makeStack(i).addShiftTooltip(function(item) {   
+            return "§4Предупреждение:";});}
+        for i in ic2_metadata_level{
+            ic2_enegrelvl.makeStack(i).addShiftTooltip(function(item) {    
+            return "§4Соблюдайте энергоуровень, иначе механизм взорвётся." ;}, 
+            function(item){return "§4Зажмите §fshift §4для подробностей";});}
+
+    //Предупреждение об энергоуровне! (трансформаторам)
+        val ic2_trans = <ic2:te>.definition;
+        val ic2_metadata_trans = [77,78,79,80] as int[];
+        for i in ic2_metadata_trans{
+            ic2_enegrelvl.makeStack(i).addShiftTooltip(function(item) {   
+            return "§4Предупреждение:";});}
+        for i in ic2_metadata_trans{
+            ic2_trans.makeStack(i).addShiftTooltip(function(item) {    
+            return "§4Соблюдайте энергоуровень, иначе механизм взорвётся." ;}, 
+            function(item){return "§4Зажмите §fshift §4для подробностей";});}
+	/*
+	Липкий динамит <ic2:dynamite_sticky:0>
+	Динамит <ic2:dynamite:0>
+	Террачипы <ic2:tfbp:*>
+	Промышленный динамит <ic2:te:1>
+	Ядерная бомба <ic2:te:2>
+	Терраформер <ic2:te:40>
+	Энергообменник <ic2:te:65>
+	Загрузчик чанков <ic2:te:82>
+	Преобразователь пара <ic2:te:87>
+	Промышленный верстак <ic2:te:88>
+	Автоматический верстак <ic2:te:89>
+	*/
+	
+    val IC2_delete = 
+        [<ic2:dynamite_sticky:0>, <ic2:dynamite:0>, <ic2:tfbp:*>, <ic2:te:1>, <ic2:te:2>, <ic2:te:40>, <ic2:te:65>, <ic2:te:82>, <ic2:te:87>, <ic2:te:88>, <ic2:te:89>]
+        as IIngredient[];
+    for item_tip_ic2 in IC2_delete{
+        item_tip_ic2.addTooltip("§4Данный предмет отключен");
+        }
+    for item_tip_ic2 in IC2_delete{ 
+        recipes.remove(item_tip_ic2); 
+        }
+
+    //трубы - абуз через тинкер
+        mods.tconstruct.Melting.removeRecipe(<liquid:steel>,<ic2:pipe:1>);
+        mods.tconstruct.Melting.removeRecipe(<liquid:bronze>,<ic2:pipe>);
+		
+//ThaumC
+	//Описание предметов
+    //удаление и переименование вырезанных вещей 
+	val Thaum_TT = 
+        [<thaumicwonders:timewinder>, <thaumicwonders:meteorb>, <thaumicwonders:meaty_orb>, <thaumadditions:dna_sample>, <thaumadditions:entity_summoner>]
+        as IIngredient[];
+        for item_tip_b in Thaum_TT{
+        item_tip_b.addTooltip("§4Данный предмет отключен");
+        }
+		
+	mods.thaumcraft.Infusion.removeRecipe(<thaumadditions:entity_summoner>);
+	mods.thaumcraft.Infusion.removeRecipe(<thaumadditions:dna_sample>);
+    mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:timewinder>);
+	mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:meteorb>);
+	mods.thaumcraft.Infusion.removeRecipe(<thaumicwonders:meaty_orb>);
+
+//AE2
+	/*
+	МЭ шина хранения <appliedenergistics2:part:220>
+	МЭ жидкостная шина хранения <appliedenergistics2:part:221>
+	МЭ плоскость истребления<appliedenergistics2:part:300>
+	МЭ id плоскость истребления<appliedenergistics2:part:301>
+	МЭ жидкостная плоскость истребления <appliedenergistics2:part:302>
+	МЭ плоскость формирования <appliedenergistics2:part:300>
+	МЭ жидкостная плоскость формирования <appliedenergistics2:part:300>
+	
+	Пространственный пилон <appliedenergistics2:spatial_pylon>
+	Пространственный порт ввода/вывода <appliedenergistics2:spatial_io_port>
+	Пространственный компонент <appliedenergistics2:material:32> / <appliedenergistics2:material:33> / <appliedenergistics2:material:34
+	*/
+	val AE2_TT = 
+        [<appliedenergistics2:part:220>, <appliedenergistics2:part:221>, <appliedenergistics2:part:302>, <appliedenergistics2:part:321>, <appliedenergistics2:part:320>, <appliedenergistics2:part:300>, <appliedenergistics2:part:301>, <appliedenergistics2:spatial_pylon>, <appliedenergistics2:spatial_io_port>, <appliedenergistics2:material:32>, <appliedenergistics2:material:33>, <appliedenergistics2:material:34>]
+        as IIngredient[];
+        for item_tip_b in AE2_TT{
+        item_tip_b.addTooltip("§4Данный предмет отключен");
+        }
+		for item_tip_b in AE2_TT{ 
+        recipes.remove(item_tip_b); 
+        }
+
+    //Удаление упрощенного роста кварцевых семян всех видов
+        mods.thermalexpansion.Insolator.removeRecipe(<appliedenergistics2:crystal_seed>.withTag({progress: 0}), <minecraft:glowstone_dust>);
+		mods.thermalexpansion.Insolator.removeRecipe(<appliedenergistics2:crystal_seed:600>.withTag({progress: 600}), <minecraft:glowstone_dust>);
+        mods.thermalexpansion.Insolator.removeRecipe(<appliedenergistics2:crystal_seed:1200>.withTag({progress: 1200}), <minecraft:glowstone_dust>);
+    //Удаление крафта заряженного кварца через Energetic Infuser
+    //    mods.thermalexpansion.Infuser.removeRecipe(<appliedenergistics2:material>);
+		
+//BM
+        val Blood_tooltip = 
+        [<bloodmagic:teleposer>, <bloodmagic:sigil_teleposition>, <bloodmagic:sigil_transposition>, <bloodmagic:mimic:*>,
+         <bloodmagic:teleposition_focus>]
+        as IIngredient[];
+
+        for item_tip_b in Blood_tooltip{
+        item_tip_b.addTooltip("§4Данный предмет отключен");
+        }
+
+    //поддельный блок
+    recipes.remove(<bloodmagic:mimic:*>);
+
+    //сигилы
+        mods.bloodmagic.AlchemyArray.removeRecipe(<bloodmagic:sigil_teleposition>, <bloodmagic:slate:3>);
+        mods.bloodmagic.AlchemyArray.removeRecipe(<bloodmagic:sigil_transposition>, <bloodmagic:slate:3>);
+		mods.bloodmagic.AlchemyArray.removeRecipe(<bloodmagic:component:27>, <bloodmagic:slate:2>);
+        mods.bloodmagic.AlchemyArray.removeRecipe(<bloodmagic:component:17>, <bloodmagic:slate:3>);
+        mods.bloodmagic.AlchemyArray.removeRecipe(<bloodmagic:component:18>, <bloodmagic:slate:3>);
+
+    //телепозер
+        recipes.remove(<bloodmagic:teleposer>);
+
+//Botania
+    val botania_delete = 
+        [<botania:laputashard:*>, <botania:spawnermover>, <botania:spawnerclaw>, <botania:manabomb>, <botania:keepivy>, <botania:teruterubozu>, <botania:invisibilitycloak>, <botania:terraformrod>, <botania:exchangerod>, <botania:blackholetalisman>, <botania:specialflower>.withTag({type: "dandelifeon"}), <botania:pistonrelay>]
+        as IIngredient[];
+    for item_tip_b in botania_delete{
+        item_tip_b.addTooltip("§4Данный предмет отключен");
+        }
+	for item_delete_b in botania_delete{
+        recipes.remove(item_delete_b);
+        }
+
+    //жизнеодуванчик
+        mods.botania.Apothecary.removeRecipe(<botania:specialflower>.withTag({type: "dandelifeon"}));
+        mods.botania.ManaInfusion.removeRecipe(<botania:pistonrelay>);
+		
+//Forestry
+	//генератор дождя 
+		recipes.remove(<forestry:rainmaker>);
+		<forestry:rainmaker>.addTooltip("§4Данный предмет отключен");
+
+//EU2
+	val EU2_TT = 
+        [<extrautils2:crafter>, <extrautils2:miner>, <extrautils2:user>, <extrautils2:interactionproxy>, <extrautils2:chunkloader>, <extrautils2:quarryproxy>, <extrautils2:quarry>, <extrautils2:lawsword>, <extrautils2:compoundbow>, <extrautils2:unstableingots>, <extrautils2:bagofholding>, <extrautils2:chickenring>, <extrautils2:chickenring:1>, <extrautils2:angelring>, <extrautils2:angelring:1>, <extrautils2:angelring:2>, <extrautils2:angelring:3>, <extrautils2:angelring:4>, <extrautils2:angelring:5>, <extrautils2:goldenlasso>, <extrautils2:goldenlasso:1>]
+        as IIngredient[];
+        for item_tip_b in EU2_TT{
+        item_tip_b.addTooltip("§4Данный предмет отключен");
+        }
+		for item_delete_b in EU2_TT{
+        recipes.remove(item_delete_b);
+        }
+		
+//TC
+	/*
+	EFLS <tconstruct:throwball:1>
+	*/
+	val TC_TT = 
+        [<tconstruct:throwball:1>]
+        as IIngredient[];
+        for item_tip_b in TC_TT{
+        item_tip_b.addTooltip("§4Данный предмет отключен");
+        }
+		for item_delete_b in TC_TT{
+        recipes.remove(item_delete_b);
+        }
+		
+//DA
+/*
+*/
+ val DA_TT = 
+        [<draconicadditions:potato_helm>, <draconicadditions:potato_chest>, <draconicadditions:potato_legs>, <draconicadditions:potato_boots>, <draconicadditions:inert_potato_helm>, <draconicadditions:inert_potato_chest>, <draconicadditions:inert_potato_legs>, <draconicadditions:inert_potato_boots>, <draconicadditions:infused_potato_helm>, <draconicadditions:infused_potato_chest>, <draconicadditions:infused_potato_legs>, <draconicadditions:infused_potato_boots>]
+        as IIngredient[];
+        for item_tip_b in DA_TT{
+        item_tip_b.addTooltip("§4Данный предмет отключен");
+        }
+		for item_delete_b in DA_TT{
+        recipes.remove(item_delete_b);
+        }
+
+//FiX
+recipes.addShapeless (<minecraft:fireworks>.withTag({Fireworks: {Flight: 1 as byte}}) * 3, [<minecraft:paper>, <minecraft:gunpowder>]);
+recipes.addShapeless (<minecraft:fireworks>.withTag({Fireworks: {Flight: 2 as byte}}) * 3, [<minecraft:paper>, <minecraft:gunpowder>, <minecraft:gunpowder>]);
+recipes.addShapeless (<minecraft:fireworks>.withTag({Fireworks: {Flight: 3 as byte}}) * 3, [<minecraft:paper>, <minecraft:gunpowder>, <minecraft:gunpowder>, <minecraft:gunpowder>]);
+
+recipes.remove(<minecraft:fireworks>);
+<minecraft:fireworks>.addTooltip("§4Только для полёта на элитре");
+
+//IV
+
+recipes.remove(<mts:itembench>);
+<mts:itembench>.addTooltip("§4Данный предмет отключен");
+
+//END
+		
