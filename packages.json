@@ -3,7 +3,7 @@
     "packages": [
         {
             "name": "Bonobo-Craft.com",
-            "title": "Bonobo-Craft.com",
+            "title": "Bonobo DTM",
             "version": "6.0.8",
             "location": "bonobo-craft.com.json",
             "priority": 2
