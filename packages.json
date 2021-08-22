@@ -3,16 +3,16 @@
     "packages": [
         {
             "name": "Bonobo-Craft.com",
-            "title": "Bonobo DTM",
+            "title": "Bonobo PLAY (техномагия 1.12.2 + моды, 6+ ГБ ОЗУ)",
             "version": "6.0.9",
             "location": "bonobo-craft.com.json",
             "priority": 1
         },
         {
-            "name": "Bonobo Lobby",
-            "title": "Bonobo Lobby",
-            "version": "6.0.12",
-            "location": "bonobo-lobby.json",
+            "name": "Bonobo Exp",
+            "title": "Bonobo EXP (ванила 1.17.1, 2 ГБ ОЗУ)",
+            "version": "1.0",
+            "location": "bonobo-exp.json",
             "priority": 2
         }
     ]
